@@ -1,0 +1,50 @@
+.hero3 {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/img/bg-custom.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero3::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 1%, rgba(0, 0, 0, 0.3) 20%);
+  z-index: 1;
+}
+
+.main {
+  z-index: 2;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  display: block;
+  width: 100%; /* Sesuaikan dengan lebar halaman */
+  max-width: 400px; /* Batas lebar maksimal dropdown */
+  padding: 10px;
+  margin-bottom: 20px; /* Jarak antar dropdown */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}

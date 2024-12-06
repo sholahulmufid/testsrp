@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/custom.css" rel="stylesheet" />
+    <title>Simulasi Rakit PC</title>
+  </head>
+
+  <body>
+    <section class="hero3">
+      <div class="main">
+        <label for="prosesor">Pilih Prosesor:</label>
+        <select id="prosesor" onchange="hitungTotal()">
+          <option value="0">Pilih prosesor</option>
+          <option value="1500000">
+            AMD Ryzen 3 4300G 3.8Ghz Up To 4.0Ghz Cache 4MB 65W AM4 [Box] -
+            Rp.1.500.000
+          </option>
+          <option value="4850000">
+            AMD Ryzen 5 9600X 3.9Ghz Up To 5.4Ghz Cache 32MB 65W AM5 [Box] -
+            Rp.4.850.000
+          </option>
+          <option value="6200000">
+            AMD Ryzen 7 9700X 3.8Ghz Up To 5.5Ghz Cache 32MB 65W AM5 [Box] -
+            Rp.6.200.000
+          </option>
+          <option value="7850000">
+            AMD Ryzen 9 9900X 4.4Ghz Up To 5.6Ghz Cache 64MB 120W AM5 [Box] -
+            Rp.7.850.000
+          </option>
+          <option value="2250000">
+            Intel Core i3 14100 3.5 GHz Up To 4.7 GHz Cache 12MB (BOX) -
+            Rp.2.250.000
+          </option>
+          <option value="4200000">
+            Intel Core i5 14600K 3.5 GHz Up To 5.5 GHz Cache 24 MB (BOX) -
+            Rp.4.200.000
+          </option>
+          <option value="5950000">
+            Intel Core i7 14700K 3.4 GHz Up To 5.6 GHz Cache 33 MB (BOX) -
+            Rp.5.950.000
+          </option>
+          <option value="8100000">
+            Intel Core i9 14900K 3.2 GHz Up To 6.0 GHz Cache 36 MB (BOX) -
+            Rp.8.100.000
+          </option>
+        </select>
+
+        <label for="Motherboard">Pilih Motherboard:</label>
+        <select id="Motherboard" onchange="hitungTotal()">
+          <option value="0">Pilih Motherboard</option>
+          <option value="900000">
+            Gigabyte H510M K V2 (Intel H470, DDR4) - Rp.900.000
+          </option>
+          <option value="1050000">
+            MSI H410M Pro (Intel H410, DDR4) - Rp.1.050.000
+          </option>
+          <option value="1790000">
+            ASRock B760M Pro RS/D4 (Intel B760, DDR4) - Rp.1.790.000
+          </option>
+          <option value="4150000">
+            Asus TUF Gaming B650-PLUS WIFI (AMD B650, DDR5) - Rp.4.150.000
+          </option>
+        </select>
+
+        <label for="ram">Pilih RAM:</label>
+        <select id="ram" onchange="hitungTotal()">
+          <option value="0">Pilih RAM</option>
+          <option value="305000">
+            Kingston Fury Beast DDR4 2666MHz (PC21000) 8GB (1x8GB) - Rp.305.000
+          </option>
+          <option value="295000">
+            Kingston Fury Beast DDR4 3200MHz (PC25600) 8GB (1x8GB) - Rp.295.000
+          </option>
+          <option value="525000">
+            Kingston Fury Beast DDR4 3200MHz (PC25600) 16GB (1x16GB) -
+            Rp.525.000
+          </option>
+          <option value="1030000">
+            Kingston Fury Beast DDR4 3200MHz (PC25600) 32GB (2x16GB) -
+            Rp.1.030.000
+          </option>
+        </select>
+
+        <p>Total Harga: <span id="total">Rp0</span></p>
+      </div>
+      <script>
+        function hitungTotal() {
+          // Ambil nilai dari kedua dropdown
+          const prosesor =
+            parseInt(document.getElementById("prosesor").value, 10) || 0;
+          const Motherboard =
+            parseInt(document.getElementById("Motherboard").value, 10) || 0;
+          const ram = parseInt(document.getElementById("ram").value, 10) || 0;
+
+          // Hitung total harga
+          const total = prosesor + ram + Motherboard;
+
+          // Tampilkan total harga
+          document.getElementById(
+            "total"
+          ).textContent = `Rp${total.toLocaleString()}`;
+        }
+      </script>
+    </section>
+
+    <div id="header-container"></div>
+    <div id="footer-container"></div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
